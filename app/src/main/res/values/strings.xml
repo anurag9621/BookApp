@@ -6,4 +6,6 @@
     <string name="profile">Profile</string>
     <string name="about_app">About App</string>
     <string name="navigation_bar">Navigation Bar</string>
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">close Drawer</string>
 </resources>
