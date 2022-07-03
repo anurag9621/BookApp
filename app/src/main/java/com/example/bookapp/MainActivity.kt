@@ -47,11 +47,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id=item.itemId
+        val id = item.itemId
 
-        if(id==android.R.id.home)(
+        if (id == android.R.id.home) (
                 drawerLayout.openDrawer(GravityCompat.START)
-        )
+                )
 
         return super.onOptionsItemSelected(item)
     }
