@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/drawer_header.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dash_board.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_favourits.xml" value="0.22685185185185186" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.22685185185185186" />
         <entry key="app/src/main/res/menu/menu_drawer.xml" value="0.3098958333333333" />
       </map>
     </option>
