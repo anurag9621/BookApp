@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         frameLayout = findViewById(R.id.frame)
 
         setUpToolbar()
-
+        openDashboard()
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this@MainActivity,
@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame,DashBoardFragment())
                         .addToBackStack("Dashboard")
                         .commit()
+                    supportActionBar?.title = "DASHBOARD"
+
                     drawerLayout.closeDrawers()
                 }
                 R.id.favourites -> {
@@ -53,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame,FavouriteFragment())
                         .addToBackStack("Favourites")
                         .commit()
+                    supportActionBar?.title = "FAVOURITES"
+
                     drawerLayout.closeDrawers()
                 }
                 R.id.profile -> {
@@ -60,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame,ProfileFragment())
                         .addToBackStack("Profile")
                         .commit()
+                    supportActionBar?.title = "PROFILE"
+
                     drawerLayout.closeDrawers()
                 }
                 R.id.aboutApp -> {
@@ -67,6 +73,8 @@ class MainActivity : AppCompatActivity() {
                         .replace(R.id.frame,AboutUsFragment())
                         .addToBackStack("About App")
                         .commit()
+                    supportActionBar?.title = "ABOUT APP"
+
                     drawerLayout.closeDrawers()
                 }
 
@@ -78,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
     fun setUpToolbar() {
         setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.title = "ToolBar"
+        supportActionBar?.title = "BOOKS ON"
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
@@ -91,6 +99,14 @@ class MainActivity : AppCompatActivity() {
                 )
 
         return super.onOptionsItemSelected(item)
+    }
+
+    fun openDashboard(){
+        val fragment=DashBoardFragment()
+        val transaction=supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame,fragment)
+        transaction.commit()
+        supportActionBar?.title="Dashboard"
     }
 
 }
