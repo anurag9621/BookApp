@@ -15,7 +15,9 @@ class DashBoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_dash_board, container, false)
+        val view = inflater.inflate(R.layout.fragment_dash_board, container, false)
+
+        return view
     }
 
 
