@@ -44,20 +44,30 @@ class MainActivity : AppCompatActivity() {
                 R.id.dashboard -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame,DashBoardFragment())
+                        .addToBackStack("Dashboard")
                         .commit()
                     drawerLayout.closeDrawers()
                 }
                 R.id.favourites -> {
-                    Toast.makeText(this@MainActivity, "Click on favourites", Toast.LENGTH_SHORT)
-                        .show()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame,FavouriteFragment())
+                        .addToBackStack("Favourites")
+                        .commit()
+                    drawerLayout.closeDrawers()
                 }
                 R.id.profile -> {
-                    Toast.makeText(this@MainActivity, "Click on profile", Toast.LENGTH_SHORT)
-                        .show()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame,ProfileFragment())
+                        .addToBackStack("Profile")
+                        .commit()
+                    drawerLayout.closeDrawers()
                 }
                 R.id.aboutApp -> {
-                    Toast.makeText(this@MainActivity, "Click on aboutApp", Toast.LENGTH_SHORT)
-                        .show()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.frame,AboutUsFragment())
+                        .addToBackStack("About App")
+                        .commit()
+                    drawerLayout.closeDrawers()
                 }
 
             }

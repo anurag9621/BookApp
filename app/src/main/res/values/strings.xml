@@ -13,4 +13,5 @@
     <string name="dashboard_fragment">Dashboard Fragment</string>
     <string name="favourites_fragment">Favourites Fragment</string>
     <string name="profile_fragment">Profile fragment</string>
+    <string name="about_us_fragment">About Us Fragment</string>
 </resources>
