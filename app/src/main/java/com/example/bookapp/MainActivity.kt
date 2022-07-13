@@ -17,8 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var frameLayout: FrameLayout
     lateinit var navigationView: NavigationView
 
-    var previousMenuItem:MenuItem?=null
-
+    var previousMenuItem: MenuItem? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,12 +42,12 @@ class MainActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         navigationView.setNavigationItemSelectedListener {
-            if(previousMenuItem != null){
-                previousMenuItem?.isChecked=false
+            if (previousMenuItem != null) {
+                previousMenuItem?.isChecked = false
             }
-            it.isCheckable=true
-            it.isChecked=true
-            previousMenuItem=it
+            it.isCheckable = true
+            it.isChecked = true
+            previousMenuItem = it
 
             when (it.itemId) {
                 R.id.dashboard -> {
@@ -57,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.favourites -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame,FavouriteFragment())
+                        .replace(R.id.frame, FavouriteFragment())
                         .commit()
                     supportActionBar?.title = "Favourites"
 
@@ -65,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.profile -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame,ProfileFragment())
+                        .replace(R.id.frame, ProfileFragment())
                         .commit()
                     supportActionBar?.title = "Profile"
 
@@ -73,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.aboutApp -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame,AboutUsFragment())
+                        .replace(R.id.frame, AboutUsFragment())
                         .commit()
                     supportActionBar?.title = "About App"
 
@@ -103,21 +102,21 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun openDashboard(){
-        val fragment=DashBoardFragment()
-        val transaction=supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame,fragment)
+    fun openDashboard() {
+        val fragment = DashBoardFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frame, fragment)
         transaction.commit()
-        supportActionBar?.title="Dashboard"
+        supportActionBar?.title = "Dashboard"
         navigationView.setCheckedItem(R.id.dashboard)
     }
 
     override fun onBackPressed() {
-       val frag=supportFragmentManager.findFragmentById(R.id.frame)
+        val frag = supportFragmentManager.findFragmentById(R.id.frame)
 
-        when(frag){
-            !is DashBoardFragment->openDashboard()
-            else->super.onBackPressed()
+        when (frag) {
+            !is DashBoardFragment -> openDashboard()
+            else -> super.onBackPressed()
         }
     }
 

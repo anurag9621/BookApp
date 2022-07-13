@@ -14,4 +14,6 @@
     <string name="favourites_fragment">Favourites Fragment</string>
     <string name="profile_fragment">Profile fragment</string>
     <string name="about_us_fragment">About Us Fragment</string>
+    <string name="list_item">List Item</string>
+    <string name="list_item">List Item</string>
 </resources>
